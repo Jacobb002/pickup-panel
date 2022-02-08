@@ -1,0 +1,32 @@
+:root {
+    --bg-color: grey;
+    --btn-color: red;
+}
+
+body {
+    font-family: Arial;
+    background-color: var(--bg-color);
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    margin: 10px;
+}
+
+.startInformaction {
+    text-align: center;
+    margin: 100px auto 100px auto;
+}
+
+.btn {
+    background-color: var(--btn-color);
+    padding: 25px;
+    width: 20%;
+    font-weight: 500;
+    font-size: 15px;
+    margin: 50px;
+    border: 1px solid var(--btn-color);
+}

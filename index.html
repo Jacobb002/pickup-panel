@@ -3,7 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./styles/index.css">
+        <link rel="stylesheet" href="./styles/modal.css">
         <title>Proof of concept</title>
     </head>
     <body>
@@ -13,6 +14,7 @@
                 <p>Możesz mieć swoją przesyłkę w kilkanaście sekund.</p>
                 <p>Rozpocznij klikając w przycisk.</p>
             </div>
+            <div class="informaction">
             <div class="panel">
                 <div class="panelInput">
                     <label for="phoneNumber">Numer telefonu</label>
@@ -23,7 +25,19 @@
                     <input type="number" id="pickup" name="pickup" min="0" max="9999" pattern="[0-9]\d{4}" required>
                 </div>
             </div>
-            <button class="btn" onclick="alert('test')" disabled>Odbierz paczkę</button>
+            <button id="confirm" class="btn" onclick="alert('test')">Odbierz paczkę</button>
+            </div>
+        </div>
+        <div id="webModal" class="modal">
+            <div class="modalText">
+                <span class="closeBtn">&times;</span>
+                <h1>Paczka odebrana!</h1>
+                <p>Zrobiłeś to w czasie <span>{time}</span> sekund! Czy możemy zrobić dla ciebie coś jeszcze?</p>
+                <div>
+                    <button class="btn2">To wszystko na dziś</button>
+                    <button class="btn2">Odbierz kolejną paczkę</button>
+                </div>
+            </div>
         </div>
         <script src="./proof-of-concept.js"></script>
     </body>

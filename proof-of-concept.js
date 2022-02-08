@@ -1,3 +1,4 @@
+// Informaction panel (phone number and pickup code)
 const phoneNumber = document.querySelector('#phoneNumber');
 const pickupCode = document.querySelector('#pickup');
 
@@ -44,3 +45,23 @@ let checkPickupCode = () => {
 phoneNumber.addEventListener('change', checkPhoneNumber);
 pickupCode.addEventListener('change', checkPickupCode);
 
+
+// Okno wyskakujące po poprawnym wpisaniu danych przesyłki
+
+let modal = document.getElementById('webModal');
+let button = document.getElementById('confirm');
+let span = document.getElementsByClassName('closeBtn')[0];
+
+button.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

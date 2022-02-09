@@ -71,8 +71,10 @@ let modal = document.getElementById('webModal');
 let modalBtn = document.getElementById('confirm');
 let span = document.getElementsByClassName('closeBtn')[0];
 
+// modalBtn.onclik - loader
 modalBtn.onclick = function() {
-  modal.style.display = "block";
+    const loader = timeLoader => new Promise(resolve => setTimeout(resolve, timeLoader));
+    loader(1000).then(() => modal.style.display = "block")
 }
 
 span.onclick = function() {

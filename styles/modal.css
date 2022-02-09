@@ -17,7 +17,8 @@
     margin: auto;
     padding: 20px;
     border: 1px solid black;
-    width: 50%;
+    border-radius: 5px;
+    width: 55%;
     text-align: center;
 }
 

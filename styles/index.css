@@ -30,12 +30,12 @@ p {
     font-size: 15px;
     margin: 50px;
     border: 1px solid var(--btn-color);
+    border-radius: 10px;
     transition: 0.5s;
 }
 
 .btn:hover, .modalBtn:hover {
     border: 2px solid black;
-    border-radius: 10px;
 }
 
 .modalBtn {
@@ -44,6 +44,7 @@ p {
     width: 20%;
     margin: 25px;
     border: 1px solid var(--btn-color);
+    border-radius: 10px;
     transition: 0.5s;
     height: 60px;
     font-size: 15px;
@@ -72,11 +73,11 @@ input {
     height: 30px;
     width: 150px;
     font-size: 15px;
+    text-align: center;
     font-weight: bold;
 }
 
 input[type="number"] {
-    text-align: center;
     background-color: var(--input-color);
     border: 1px solid var(--input-color);
 }

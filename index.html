@@ -18,24 +18,24 @@
             <div class="panel">
                 <div class="panelInput">
                     <label for="phoneNumber">Numer telefonu</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" maxlength="9" required>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="123456789" maxlength="9" required>
                 </div>
                 <div class="panelInput">
                     <label for="pickup">Kod odbioru</label>
-                    <input type="number" id="pickup" name="pickup" min="0" max="9999" pattern="[0-9]\d{4}" required>
+                    <input type="number" id="pickup" name="pickup" min="0" max="9999" pattern="[0-9]\d{4}" placeholder="1234" required>
                 </div>
             </div>
-            <button id="confirm" class="btn" onclick="alert('test')">Odbierz paczkę</button>
+            <button id="confirm" class="btn">Odbierz paczkę</button>
             </div>
         </div>
         <div id="webModal" class="modal">
             <div class="modalText">
                 <span class="closeBtn">&times;</span>
                 <h1>Paczka odebrana!</h1>
-                <p>Zrobiłeś to w czasie <span>{time}</span> sekund! Czy możemy zrobić dla ciebie coś jeszcze?</p>
+                <p>Zrobiłeś to w czasie <span id="time"></span> sekund! Czy możemy zrobić dla ciebie coś jeszcze?</p>
                 <div>
-                    <button class="btn2">To wszystko na dziś</button>
-                    <button class="btn2">Odbierz kolejną paczkę</button>
+                    <button id="modalBtn1" class="modalBtn">To wszystko na dziś</button>
+                    <button id="modalBtn2" class="modalBtn">Odbierz kolejną paczkę</button>
                 </div>
             </div>
         </div>

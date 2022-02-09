@@ -33,7 +33,7 @@ let checkPhoneNumber = () => {
 let checkPickupCode = () => {
     let pickup = conToNum(pickupCode.value);
     if(typeof pickup === NaN || pickup < 1000 || pickup > 9999) {
-        alert('Wprowadzono nieprawidłowy kod odbioru!');
+        alert('Wprowadzono nieprawidłowy kod odbioru!\nKod powinen posiadać 4 liczby.');
         btn2 = false;
     }
     else {
@@ -44,15 +44,34 @@ let checkPickupCode = () => {
 
 phoneNumber.addEventListener('change', checkPhoneNumber);
 pickupCode.addEventListener('change', checkPickupCode);
+btn.addEventListener('focus', unlockBtn(btn1, btn2));
 
+// Czas odbioru przesyłki
 
-// Okno wyskakujące po poprawnym wpisaniu danych przesyłki
+let timeout;
+let time = 0;
+
+function startTime() {
+    time++;
+    timeout = setTimeout('startTime()', 1000);
+}
+
+window.onload = startTime;
+
+function printTime() {
+    clearTimeout(timeout);
+    document.getElementById('time').innerHTML = time;
+}
+
+btn.addEventListener('click', printTime);
+
+// Okno wyskakujące po poprawnym wpisaniu danych przesyłki (modal window)
 
 let modal = document.getElementById('webModal');
-let button = document.getElementById('confirm');
+let modalBtn = document.getElementById('confirm');
 let span = document.getElementsByClassName('closeBtn')[0];
 
-button.onclick = function() {
+modalBtn.onclick = function() {
   modal.style.display = "block";
 }
 
@@ -64,4 +83,17 @@ window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
+}
+
+// Funkcje dla dwóch przycisków w modal window
+
+let modalBtn1 = document.getElementById('modalBtn1');
+let modalBtn2 = document.getElementById('modalBtn2');
+
+modalBtn1.onclick = function() {
+    modal.style.display = "none";
+}
+
+modalBtn2.onclick = function() {
+    window.location.reload(true);
 }

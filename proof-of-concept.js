@@ -7,8 +7,10 @@ const btn = document.querySelector('.btn');
 let btn1 = false;
 let btn2 = false;
 
+// Zamiana tekstu na liczbę
 const conToNum = (x) => (typeof x === 'string') ? parseInt(x, 10) : x;
 
+// Funkcja odblokowująca przycisk po poprawnym wpisaniu danych
 function unlockBtn(status1, status2) {
     if(status1 == true && status2 == true) {
         btn.disabled = false;
@@ -47,7 +49,6 @@ pickupCode.addEventListener('change', checkPickupCode);
 btn.addEventListener('focus', unlockBtn(btn1, btn2));
 
 // Czas odbioru przesyłki
-
 let timeout;
 let time = 0;
 
@@ -66,7 +67,6 @@ function printTime() {
 btn.addEventListener('click', printTime);
 
 // Okno wyskakujące po poprawnym wpisaniu danych przesyłki (modal window)
-
 let modal = document.getElementById('webModal');
 let modalBtn = document.getElementById('confirm');
 let span = document.getElementsByClassName('closeBtn')[0];
@@ -93,7 +93,7 @@ let modalBtn1 = document.getElementById('modalBtn1');
 let modalBtn2 = document.getElementById('modalBtn2');
 
 modalBtn1.onclick = function() {
-    modal.style.display = "none";
+    window.location.reload(true);
 }
 
 modalBtn2.onclick = function() {
